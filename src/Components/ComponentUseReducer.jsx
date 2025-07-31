@@ -14,13 +14,13 @@ const nuevaTarea = {
   finalizada: false
 }
 
-const editarTarea = {
+const tareaEditada = {
   id: 3,
   tarea: 'Editar Tarea',
   finalizada: false
 }
 
-const borrarTarea = {
+const tareaBorrada = {
   id: 4,
   tarea: 'Borrar Tarea',
   finalizada: false
@@ -33,11 +33,31 @@ const agregarTarea = {
   payload: nuevaTarea
 }
 
+const editarTarea = {
+  type: '[TAREAS] Editar Tarea',
+  payload: tareaEditada
+}
+
+const borrarTarea = {
+  type: '[TAREAS] Borrar Tarea',
+  payload: []
+}
+
 //Reducer
 
 const tareaReducer = (state = estadoInicial, action = {}) => {
-    if(action.type === '[TAREAS] Agregar Tarea'){
-      return [...state, action.payload]
+    switch (action.type) {
+      case '[TAREAS] Agregar Tarea':
+          return [...state, nuevaTarea]
+      
+      case '[TAREAS] Editar Tarea':
+          return [...state, tareaEditada]
+      
+      case '[TAREAS] Borrar Tarea':
+          return []
+    
+      default:
+        state
     }
 }
 
