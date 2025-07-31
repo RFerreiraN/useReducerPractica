@@ -57,11 +57,11 @@ const tareaReducer = (state = estadoInicial, action = {}) => {
           return []
     
       default:
-        state
+       return state
     }
 }
 
-console.log(tareaReducer(estadoInicial, agregarTarea))
+console.log(tareaReducer(estadoInicial, agregarTarea ))
 
 
 
