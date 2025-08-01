@@ -40,7 +40,6 @@ const editarTarea = {
 
 const borrarTarea = {
   type: '[TAREAS] Borrar Tarea',
-  payload: []
 }
 
 //Reducer
@@ -48,10 +47,10 @@ const borrarTarea = {
 const tareaReducer = (state = estadoInicial, action = {}) => {
     switch (action.type) {
       case '[TAREAS] Agregar Tarea':
-          return [...state, nuevaTarea]
+          return [...state, action.payload]
       
       case '[TAREAS] Editar Tarea':
-          return [...state, tareaEditada]
+          return [...state, action.payload]
       
       case '[TAREAS] Borrar Tarea':
           return []
